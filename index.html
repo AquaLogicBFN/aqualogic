@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aqua Logic | Smart Irrigation, Landscaping & Koi Ponds</title>
+    <meta name="description" content="Aqua Logic in Bloemfontein: Experts in Smart Irrigation, Landscaping, and Koi Ponds. Founded by Glenn and Hendrik." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        /* Fixed Gradient from Cyan-200 to Lime-300 matching the user's image */
+        background-image: linear-gradient(135deg, #A5F3FC 0%, #BEF264 100%);
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        color: #0f172a; /* Slate 900 */
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      /* Smooth Flowing Text Animation */
+      @keyframes gradient-flow {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+      
+      .animate-flow-text {
+        background: linear-gradient(90deg, #0e7490, #2563eb, #65a30d, #0e7490);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: gradient-flow 6s linear infinite;
+        display: inline-block;
+      }
+      
+      .animate-flow-text-light {
+        background: linear-gradient(90deg, #ffffff, #67e8f9, #bef264, #ffffff);
+        background-size: 200% auto;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: gradient-flow 6s linear infinite;
+        display: inline-block;
+      }
+
+      /* Slide Up Animation */
+      @keyframes slide-up {
+        0% { transform: translateY(30px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slide-up {
+        animation: slide-up 1s ease-out forwards;
+      }
+      .animate-slide-up-delay {
+        animation: slide-up 1s ease-out 0.3s forwards;
+        opacity: 0;
+      }
+
+      /* Wave Text Cycle Animations */
+      @keyframes wave-in {
+        0% { opacity: 0; transform: translateY(20px) scale(0.95); filter: blur(4px); }
+        100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+      }
+      
+      @keyframes wave-out {
+        0% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        100% { opacity: 0; transform: translateY(-20px) scale(1.05); filter: blur(4px); }
+      }
+
+      .text-enter {
+        animation: wave-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      .text-exit {
+        animation: wave-out 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+
+      /* Navbar Link Effect */
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(0,0,0,0) 70%);
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.3s ease;
+        z-index: -1;
+        border-radius: 8px;
+      }
+      .nav-link:hover::before {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      .nav-link:hover {
+        color: #0284c7; /* Sky 600 */
+      }
+
+      /* --- Animated Border Styles --- */
+      @keyframes border-shift {
+        to { transform: translateX(-25%); }
+      }
+
+      .btn-animated {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 9999px;
+        overflow: hidden;
+        padding: 2px;
+        isolation: isolate;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+      }
+
+      .btn-animated::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 400%;
+        height: 100%;
+        background: linear-gradient(115deg, #38bdf8, #84cc16, #ffffff, #38bdf8);
+        background-size: 25% 100%;
+        animation: border-shift 2s linear infinite;
+        z-index: -1;
+      }
+
+      .btn-animated:active { transform: scale(0.96); }
+      .btn-animated:hover { box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3); }
+
+      .btn-animated span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 9999px;
+        width: 100%;
+        height: 100%;
+        color: white;
+        transition: background-color 0.3s;
+      }
+      
+      .btn-dark span { 
+        background-color: #0f172a; 
+        color: white;
+      }
+      .btn-dark:hover span { background-color: #1e293b; }
+      
+      .btn-glass span {
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: #0f172a;
+      }
+      .btn-glass:hover span {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #0284c7;
+      }
+
+      /* --- Animated Card Styles --- */
+      .card-animated {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        padding: 1px;
+        border-radius: 1.25rem;
+        isolation: isolate;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+      }
+
+      .card-animated:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.15);
+      }
+
+      .card-animated-inner {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.7); /* More transparent for glass effect */
+        backdrop-filter: blur(12px);
+        border-radius: 1.25rem;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      
+      .card-animated:hover .card-animated-inner {
+         border-color: rgba(255, 255, 255, 0.9);
+         background-color: rgba(255, 255, 255, 0.85);
+      }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
